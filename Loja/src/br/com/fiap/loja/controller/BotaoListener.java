@@ -3,9 +3,11 @@ package br.com.fiap.loja.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import br.com.fiap.loja.dao.ProdutoDao;
 import br.com.fiap.loja.model.Produto;
 import br.com.fiap.loja.view.Janela;
 
@@ -14,6 +16,7 @@ import br.com.fiap.loja.view.Janela;
 public class BotaoListener implements ActionListener {
 	
 	private Janela view;
+	private ProdutoDao dao = new ProdutoDao();
 
 	public BotaoListener(Janela view) {
 		this.view = view;
@@ -27,9 +30,12 @@ public class BotaoListener implements ActionListener {
 		produto.setDescricao(view.getTxtDescricao().getText());
 		produto.setPreco(new BigDecimal(view.getTxtPreco().getText()) );
 		
+		dao.inserir(produto);
 		
+		view.carregarDados();
 		
-		JOptionPane.showMessageDialog(null, produto);
+		List<Produto> lista = dao.listarTodos();
+		lista.forEach(System.out::println);
 	}
 	
 }
