@@ -1,4 +1,4 @@
-
+package br.com.fiap.rh ;
 
 public final class Presidente extends Empregado implements FuncionarioAutenticavel {
 

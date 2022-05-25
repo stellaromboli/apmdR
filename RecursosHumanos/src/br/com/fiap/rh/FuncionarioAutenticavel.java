@@ -1,4 +1,4 @@
-
+package br.com.fiap.rh ;
 
 public interface FuncionarioAutenticavel {
 

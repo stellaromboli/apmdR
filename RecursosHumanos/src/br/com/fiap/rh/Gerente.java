@@ -1,4 +1,4 @@
-
+package br.com.fiap.rh ;
 
 public class Gerente extends Empregado implements FuncionarioAutenticavel {
 

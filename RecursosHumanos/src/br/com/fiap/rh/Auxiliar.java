@@ -1,4 +1,4 @@
-
+package br.com.fiap.rh ;
 
 public class Auxiliar extends Empregado {
 
